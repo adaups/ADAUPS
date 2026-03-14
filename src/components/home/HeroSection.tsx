@@ -6,8 +6,8 @@ import { containerVariants, itemVariants } from '../../lib/motion';
 import { useAnimatedCounter } from '../../hooks/useAnimatedCounter';
 
 const backgroundImages = [
-  '/images/event1.jpeg',
-  '/images/event2.jpeg'
+  '/images/event1.webp',
+  '/images/event2.webp'
 ];
 
 function AnimatedCounter({ end, duration = 2 }: { end: number; duration?: number }) {

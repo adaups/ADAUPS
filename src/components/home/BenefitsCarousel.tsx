@@ -48,7 +48,7 @@ export default function BenefitsCarousel() {
                   className="flex flex-col items-center justify-center w-56 h-40 p-6 bg-slate-50 rounded-2xl hover:bg-white hover:shadow-xl transition-all duration-300 border border-slate-100 flex-shrink-0"
                 >
                   {item.img ? (
-                    <img src={item.img} alt={item.alt} className="h-12 object-contain mb-3" referrerPolicy="no-referrer" />
+                    <img src={item.img} alt={item.alt} width="120" height="48" className="h-12 w-auto object-contain mb-3" referrerPolicy="no-referrer" />
                   ) : (
                     <div className="h-12 flex items-center justify-center mb-3 text-blue-600">
                       <span className="font-black text-2xl tracking-tighter">{item.text}</span>

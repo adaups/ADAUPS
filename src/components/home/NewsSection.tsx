@@ -59,7 +59,7 @@ export default function NewsSection() {
             {/* Featured News */}
             {featured && (
               <motion.div variants={itemVariants} className="lg:col-span-12 xl:col-span-7 group">
-                <Link to={`/noticias/${featured.id}`} className="block relative h-[280px] sm:h-[340px] rounded-2xl overflow-hidden shadow-md">
+                <Link to={`/noticias/${featured.id}`} className="block relative aspect-[4/3] sm:aspect-[16/9] w-full bg-slate-200 rounded-2xl overflow-hidden shadow-md">
                   <img
                     src={featured.imageUrl}
                     alt={featured.title}
@@ -98,7 +98,7 @@ export default function NewsSection() {
               <motion.div variants={itemVariants} className="lg:col-span-12 xl:col-span-5 flex flex-col gap-4">
                 {secondary.map((news) => (
                   <Link to={`/noticias/${news.id}`} key={news.id} className="group flex gap-4 bg-white rounded-2xl p-3 sm:p-4 hover:bg-slate-50 transition-all border border-transparent hover:border-slate-100 cursor-pointer">
-                    <div className="w-24 h-24 sm:w-32 sm:h-32 relative rounded-xl overflow-hidden flex-shrink-0 shadow-sm">
+                    <div className="w-24 h-24 sm:w-32 sm:h-32 aspect-square relative bg-slate-200 rounded-xl overflow-hidden flex-shrink-0 shadow-sm">
                       <img
                         src={news.imageUrl}
                         alt={news.title}
