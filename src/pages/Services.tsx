@@ -5,7 +5,6 @@ import { motion } from 'motion/react';
 import { containerVariants, itemVariants } from '../lib/motion';
 import { serviceIconMap, defaultServiceIcon } from '../lib/icons';
 import DecorativeBackground from '../components/ui/DecorativeBackground';
-import PageHeader from '../components/ui/PageHeader';
 
 export default function Services() {
   return (

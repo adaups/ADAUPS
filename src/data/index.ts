@@ -321,48 +321,4 @@ export const newsData: NewsItem[] = [
     ]
   },
 
-
- /*
-  {
-    id: 'n1',
-    title: 'Actualización de Beneficios 2025',
-    category: 'Destacado',
-    date: '2025-01-15',
-    summary: 'Conoce las nuevas promociones y beneficios disponibles para todos los socios de ADAUPS en este inicio de año. Hemos ampliado nuestra red de convenios médicos y comerciales.',
-    imageUrl: 'https://www.adaups.org/wp-content/uploads/2025/01/Banner_662x253.png',
-    content: [
-      'En este inicio de año, la Asociación de Docentes y Administrativos de la Universidad Politécnica Salesiana (ADAUPS) se complace en informar sobre la ampliación significativa de beneficios para todos sus socios activos.',
-      'La red de convenios médicos ha sido fortalecida con la incorporación de nuevas clínicas y centros de especialidades en las ciudades de Quito, Guayaquil y Cuenca, permitiendo a los afiliados acceder a consultas con tarifas preferenciales en más de 15 especialidades médicas.',
-      'Adicionalmente, se han renovado los acuerdos comerciales con establecimientos aliados, ofreciendo descuentos que van desde el 10% hasta el 30% en una variedad de productos y servicios de uso cotidiano.',
-      'Para acceder a estos beneficios, los socios deben presentar su credencial vigente de ADAUPS. Se recomienda verificar la lista completa de convenios actualizada en la sección de Beneficios de este portal.'
-    ]
-  },
-  {
-    id: 'n2',
-    title: 'Nuevos Convenios de Salud',
-    category: 'Salud',
-    date: '2024-12-10',
-    summary: 'Aprovecha los descuentos en la red de farmacias afiliadas presentando tu credencial.',
-    imageUrl: 'https://www.adaups.org/wp-content/uploads/2024/12/farma.png',
-    content: [
-      'ADAUPS ha firmado nuevos convenios con cadenas farmacéuticas a nivel nacional para ofrecer a sus socios descuentos exclusivos en medicamentos y productos de salud.',
-      'Los afiliados podrán beneficiarse de descuentos de hasta el 25% en medicamentos genéricos y de marca en las farmacias participantes. Solo es necesario presentar la credencial vigente de socio al momento de la compra.',
-      'Esta iniciativa forma parte del compromiso continuo de la asociación con el bienestar integral de sus miembros y sus familias, facilitando el acceso a productos de salud de calidad a precios más accesibles.'
-    ]
-  },
-  {
-    id: 'n3',
-    title: 'Seguro Vehicular Zurich',
-    category: 'Seguros',
-    date: '2024-11-28',
-    summary: 'Renueva tu seguro vehicular con condiciones preferenciales y facilidades de pago.',
-    imageUrl: 'https://www.adaups.org/wp-content/uploads/2024/11/Z2-1024x351.png',
-    content: [
-      'Gracias al convenio vigente entre ADAUPS y Zurich Seguros, los socios pueden acceder a planes de seguro vehicular con condiciones preferenciales diseñadas exclusivamente para la comunidad universitaria.',
-      'El plan incluye cobertura contra todo riesgo, asistencia vehicular las 24 horas del día los 365 días del año, y facilidades de pago mediante cuotas mensuales sin recargo adicional.',
-      'Para solicitar una cotización personalizada o renovar tu póliza actual, puedes acercarte a las oficinas de ADAUPS o contactar directamente al asesor asignado. Los requisitos incluyen copia de la matrícula del vehículo, cédula de identidad y la credencial de socio vigente.'
-    ]
-  }
-
- */
 ];

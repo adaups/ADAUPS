@@ -2,12 +2,12 @@ import type { LucideIcon } from 'lucide-react';
 
 // --- Sub-types ---
 
-export interface FAQ {
+interface FAQ {
   question: string;
   answer: string;
 }
 
-export interface DocumentLink {
+interface DocumentLink {
   name: string;
   url: string;
 }
@@ -75,7 +75,7 @@ export interface NewsItem {
 
 // --- Navigation ---
 
-export interface NavChild {
+interface NavChild {
   name: string;
   path: string;
 }

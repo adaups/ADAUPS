@@ -1,15 +1,18 @@
+import { lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
-import Home from './pages/Home';
-import About from './pages/About';
-import Services from './pages/Services';
-import ServiceDetail from './pages/ServiceDetail';
-import Benefits from './pages/Benefits';
-import BenefitDetail from './pages/BenefitDetail';
-import Transparency from './pages/Transparency';
-import News from './pages/News';
-import NewsDetail from './pages/NewsDetail';
-import Contact from './pages/Contact';
+
+const Home = lazy(() => import('./pages/Home'));
+const About = lazy(() => import('./pages/About'));
+const Services = lazy(() => import('./pages/Services'));
+const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
+const Benefits = lazy(() => import('./pages/Benefits'));
+const BenefitDetail = lazy(() => import('./pages/BenefitDetail'));
+const Transparency = lazy(() => import('./pages/Transparency'));
+const News = lazy(() => import('./pages/News'));
+const NewsDetail = lazy(() => import('./pages/NewsDetail'));
+const Contact = lazy(() => import('./pages/Contact'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 export default function App() {
   return (
@@ -35,6 +38,7 @@ export default function App() {
             <Route path=":newsId" element={<NewsDetail />} />
           </Route>
           <Route path="contacto" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
