@@ -34,9 +34,9 @@ export const servicesData: Service[] = [
     title: 'Préstamo Ordinario',
     shortDescription: 'Préstamos de hasta $12,000 con plazos de hasta 72 meses.',
     description: 'Crédito destinado a cubrir diversas necesidades de los socios, con condiciones preferenciales basadas en el ahorro acumulado y tiempo de aportación.',
-    eligibility: 'Socios con al menos 12 aportaciones montos minimos y 84 aportaciones para montos maximos. Un ahorro mínimo de $240 y de $4,800 para el monto máximo.',
+    eligibility: 'Socios con al menos 12 aportaciones para montos minimos y 84 aportaciones para montos maximos.',
     benefits: [
-      'Monto desde $100, máximo de hasta $12,000.',
+      'Monto desde $100 hasta $12,000.',
       'Plazo desde 12 meses hasta 72 meses.',
       'Tasas de interés competitivas.'
     ],
@@ -45,11 +45,16 @@ export const servicesData: Service[] = [
       'Copia de cédula y papeleta de votación.',
       'Rol de pagos del último mes.',
       'Letra de cambio firmada',
+      'Carta compromiso',
       'Garante (dependiendo del monto y ahorro).'
     ],
     howToApply: 'Descarga el formulario, llénalo y entrégalo en las oficinas de ADAUPS junto con los requisitos.',
     documents: [
-      { name: 'Reglamento de Préstamos', url: 'https://www.adaups.org/wp-content/uploads/2024/05/REGLAMENTO_DE_PRESTAMOS_2023-1.pdf' }
+      { name: 'Solicitud de credito ordinario', url: '/documents/SOLICITUD-CREDITO-ORDINARIO.pdf' },
+      { name: 'Carta compromiso deudor', url: '/documents/CARTA-COMPROMISO-DEUDOR.pdf' },
+      { name: 'Carta compromiso codeudor', url: '/documents/CARTA-COMPROMISO-CODEUDOR.pdf' }
+
+
     ],
     faqs: [
       {
@@ -80,7 +85,7 @@ export const servicesData: Service[] = [
     ],
     howToApply: 'Presentar la solicitud y justificativos en las oficinas de ADAUPS lo antes posible.',
     documents: [
-      { name: 'Reglamento de Préstamos', url: 'https://www.adaups.org/wp-content/uploads/2024/05/REGLAMENTO_DE_PRESTAMOS_2023-1.pdf' }
+      { name: 'Solicitud de credito emergente', url: '/documents/SOLICITUD-PRESTAMO-EMERGENTE.pdf' }
     ],
     faqs: [
       {
@@ -117,7 +122,7 @@ export const servicesData: Service[] = [
     id: 'ahorro-programado',
     title: 'Ahorro Programado',
     shortDescription: 'Ahorro voluntario mensual que genera intereses trimestrales.',
-    description: 'Es el fondo principal que permite a la asociación otorgar préstamos. Consiste en un aporte mensual obligatorio que genera rendimientos.',
+    description: 'Es el fondo principal que permite a la asociación otorgar préstamos. Consiste en un aporte mensual que genera rendimientos.',
     eligibility: 'Todos los socios de ADAUPS.',
     benefits: [
       'Genera intereses que se capitalizan trimestralmente.',
@@ -137,7 +142,7 @@ export const servicesData: Service[] = [
     id: 'ahorro-voluntario',
     title: 'Ahorro Voluntario',
     shortDescription: 'Ahorro adicional disponible a la vista.',
-    description: 'Un débito adicional al ahorro obligatorio que el socio decide realizar de forma voluntaria. Este fondo está disponible "a la vista" para cuando el socio lo requiera.',
+    description: 'Un débito adicional al ahorro programado que el socio decide realizar de forma voluntaria. Este fondo está disponible "a la vista" para cuando el socio lo requiera.',
     eligibility: 'Todos los socios de ADAUPS.',
     benefits: [
       'Fomenta la cultura del ahorro.',
@@ -156,6 +161,7 @@ export const servicesData: Service[] = [
 ];
 
 export const benefitsData: Benefit[] = [
+  /*
   {
     id: 'seguro-vehicular',
     title: 'Seguro de Vehículos',
@@ -176,6 +182,7 @@ export const benefitsData: Benefit[] = [
       { name: 'Condiciones Renovación AIG', url: 'https://www.adaups.org/wp-content/uploads/2024/12/AIG.pdf' }
     ]
   },
+  
   {
     id: 'farmacias-gpf',
     title: 'Corporación GPF (Fybeca / Sana Sana)',
@@ -248,9 +255,11 @@ export const benefitsData: Benefit[] = [
     images: [],
     documents: []
   }
+  */
 ];
 
 export const transparencyData: TransparencyDocument[] = [
+  /*
   {
     id: '1',
     title: 'Estado de Resultados 2023',
@@ -286,6 +295,7 @@ export const transparencyData: TransparencyDocument[] = [
     date: '2024-04-05',
     url: '#'
   }
+    */
 ];
 
 
@@ -312,7 +322,7 @@ export const newsData: NewsItem[] = [
     category: 'Institucional',
     date: '2026-03-10',
     summary: 'Bienvenidos al nuevo portal web de la Asociación de Docentes y Administrativos. Un espacio moderno diseñado para servirte mejor.',
-    imageUrl: '/images/new_web.webp',
+    imageUrl: '/images/news/new_web.webp',
     content: [
       'Nos enorgullece presentar el nuevo portal web de ADAUPS, una plataforma completamente rediseñada para ofrecer a nuestros socios una experiencia ágil, moderna y accesible desde cualquier dispositivo.',
       'Este nuevo espacio digital ha sido concebido para centralizar toda la información de interés: desde nuestros servicios y beneficios exclusivos, hasta los convenios médicos y comerciales vigentes. Ahora es más fácil que nunca mantenerse al tanto de las últimas novedades.',

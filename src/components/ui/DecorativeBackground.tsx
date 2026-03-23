@@ -3,12 +3,8 @@ interface DecorativeBackgroundProps {
 }
 
 export default function DecorativeBackground({ variant = 'default' }: DecorativeBackgroundProps) {
-  const configs = {
+  const configs: Record<string, { position: string; color: string; opacity: string }[]> = {
     default: [
-      { position: '-top-24 -right-24', color: 'bg-blue-100', opacity: 'opacity-50' },
-      { position: 'top-1/2 -left-24', color: 'bg-emerald-100', opacity: 'opacity-30' },
-    ],
-    services: [
       { position: '-top-24 -right-24', color: 'bg-blue-100', opacity: 'opacity-50' },
       { position: 'top-1/2 -left-24', color: 'bg-emerald-100', opacity: 'opacity-30' },
     ],
@@ -18,7 +14,7 @@ export default function DecorativeBackground({ variant = 'default' }: Decorative
     ],
   };
 
-  const circles = configs[variant];
+  const circles = configs[variant] || configs.default;
 
   return (
     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full overflow-hidden pointer-events-none">

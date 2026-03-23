@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-1">
-            <img className="h-12 w-auto mb-4 bg-white p-2 rounded" src="/images/Logo_ADAUPS.webp" alt="ADAUPS Logo" />
+            <img className="h-12 w-auto mb-4 bg-white p-2 rounded" src="/images/Logo_ADAUPS.webp" alt="ADAUPS Logo" width={48} height={48} loading="lazy" />
             <p className="text-sm">
               Asociación de Docentes, Administrativos y Servicios de la Universidad Politécnica Salesiana - Sede Quito.
             </p>

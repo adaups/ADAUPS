@@ -6,10 +6,7 @@ import { useFilteredData } from '../hooks/useFilteredData';
 import PageHeader from '../components/ui/PageHeader';
 import type { TransparencyDocument } from '../types/types';
 
-const getMockSize = (id: string) => {
-  const num = parseInt(id, 10) || 1;
-  return (1.2 + (num % 5) * 0.3).toFixed(1) + ' MB';
-};
+
 
 export default function Transparency() {
   const {
@@ -116,7 +113,6 @@ export default function Transparency() {
                                 <span className="bg-slate-100 text-slate-700 px-2 py-0.5 rounded font-semibold text-xs border border-slate-200">
                                   PDF
                                 </span>
-                                <span>{getMockSize(doc.id)}</span>
                                 <span className="text-slate-300">•</span>
                                 <span>
                                   Publicado: {new Date(doc.date).toLocaleDateString('es-ES', { month: 'long', year: 'numeric' }).replace(/^\w/, c => c.toUpperCase())}

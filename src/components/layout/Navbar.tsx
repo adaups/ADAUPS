@@ -15,7 +15,7 @@ export default function Navbar() {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
-              <img className="h-10 w-auto" src="/images/Logo_ADAUPS.webp" alt="ADAUPS Logo" />
+              <img className="h-10 w-auto" src="/images/Logo_ADAUPS.webp" alt="ADAUPS Logo" width={40} height={40} />
             </Link>
           </div>
 

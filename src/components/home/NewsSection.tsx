@@ -63,6 +63,7 @@ export default function NewsSection() {
                   <img
                     src={featured.imageUrl}
                     alt={featured.title}
+                    loading="lazy"
                     className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                     referrerPolicy="no-referrer"
                   />
@@ -102,6 +103,7 @@ export default function NewsSection() {
                       <img
                         src={news.imageUrl}
                         alt={news.title}
+                        loading="lazy"
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         referrerPolicy="no-referrer"
                       />

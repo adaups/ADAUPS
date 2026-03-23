@@ -34,7 +34,7 @@ export default function News() {
           transition={{ duration: 0.6 }}
           className="max-w-3xl"
         >
-          <div className="flex items-center gap-4 m6">
+          <div className="flex items-center gap-4 mb-6">
             <div className="h-px w-8 bg-blue-600"></div>
             <span className="text-blue-600 font-bold uppercase tracking-widest text-sm">
               Sala de Prensa

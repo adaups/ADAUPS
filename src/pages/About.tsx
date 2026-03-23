@@ -90,17 +90,17 @@ export default function About() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { role: 'Presidente', name: 'Darwin Reyes PhD', image: '/images/darwin_reyes.png' },
-              { role: 'Vicepresidenta', name: 'Gabriela Yanez Mgs', image: '/images/gabriela_yanez.jpg' },
-              { role: 'Secretario', name: 'Esteban Plaza Mgs', image: '/images/esteban_plaza.jpg' },
-              { role: 'Tesorera', name: 'Lorena Guerrero PhD', image: '/images/lorena_guerrero.jpg' },
-              { role: 'Sindicato', name: 'Lizeth Pérez Mgs', image: '/images/lizeth_perez.jpg' },
-              { role: 'Representante personal docente', name: 'Jaime Heredia Mgs', image: '/images/jaime-heredia.png' },
-              { role: 'Representante personal administrativo', name: 'Lcda Ana Cano', image: '/images/ana-cano.png' },
-              { role: 'Representante personal servicio', name: 'Sr. Edison Naranjo', image: '/images/edison-naranjo.png' },
-              { role: 'Suplente representante personal docente', name: 'Sara Castillo Mgs', image: '/images/sara-castillo.png' },
-              { role: 'Suplente representante personal administrativo', name: 'Sr. Ángel Aguaguiña', image: '/images/angel-aguaguiña.png' },
-              { role: 'Suplente representante personal servicio', name: 'Sra. Susana Macías', image: '/images/susana-macias.png' },
+              { role: 'Presidente', name: 'Lcdo. Darwin Reyes, PhD', image: '/images/directive/darwin-reyes.webp' },
+              { role: 'Vicepresidenta', name: 'Ing. Gabriela Yánez, MsC', image: '/images/directive/gabriela-yanez.webp' },
+              { role: 'Secretario', name: 'Ing. Esteban Plaza, MsC.', image: '/images/directive/esteban-plaza.webp' },
+              { role: 'Tesorera', name: 'Lcda. Lorena Guerrero, PhD', image: '/images/directive/lorena-guerrero.webp' },
+              { role: 'Sindicato', name: 'Abg. Lizeth Pérez, MsC.', image: '/images/directive/lizeth-perez.webp' },
+              { role: 'Representante principal personal docente', name: 'Ing. Jaime Heredia, MsC.', image: '/images/directive/jaime-heredia.webp' },
+              { role: 'Representante principal personal administrativo', name: 'Lcda. Ana Cano', image: '/images/directive/ana-cano.webp' },
+              { role: 'Representante principal personal servicio', name: 'Sr. Edison Naranjo', image: '/images/directive/edison-naranjo.webp' },
+              { role: 'Representante suplente personal docente', name: 'Psic. Sara Castillo, MsC', image: '/images/directive/sara-castillo.webp' },
+              { role: 'Representante suplente personal administrativo', name: 'Sr. Ángel Aguaguiña', image: '/images/directive/angel-aguaguiña.webp' },
+              { role: 'Representante suplente personal servicio', name: 'Sra. Susana Macías', image: '/images/directive/susana-macias.webp' },
             ].map((member, index) => (
               <motion.div
                 key={index}
@@ -113,6 +113,9 @@ export default function About() {
                   <img
                     src={member.image}
                     alt={member.name}
+                    width={400}
+                    height={400}
+                    loading="lazy"
                     className="w-full h-full object-cover relative z-10"
                     onError={(e) => {
                       // Fallback si la imagen no existe

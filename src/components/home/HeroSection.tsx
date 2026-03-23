@@ -29,13 +29,7 @@ export default function HeroSection() {
   
     <div className="relative z-20">
 
-      {/* ═══════════════════════════════════════════════════════════════
-          SECCIÓN HERO (Portada)
-          • Altura (min-h): Para que la imagen no se vea tan "zomeada"
-            o recortada, usamos min-h-[70vh]. Al no ser tan alta,
-            la imagen requiere menos recorte a los lados para llenar el espacio.
-          • El contenido extra forzaba mucha altura, lo redujimos.
-          ═══════════════════════════════════════════════════════════════ */}
+      {/* Hero Section */}
       <section className="relative bg-slate-900 text-white min-h-[90vh] flex flex-col overflow-hidden">
 
         {/* Imagen de fondo con carrusel automático */}
@@ -49,22 +43,15 @@ export default function HeroSection() {
               transition={{ duration: 1.5, ease: 'easeInOut' }}
               src={backgroundImages[currentImageIndex]}
               alt="ADAUPS Background"
-              // 📐 object-cover: llena todo el espacio recortando lo necesario.
-              // object-position: controla qué parte de la imagen se prioriza.
-              // Opciones: object-top, object-center, object-bottom
               className="absolute inset-0 w-full h-full object-cover object-center"
             />
           </AnimatePresence>
 
-          {/* 🌑 Overlay oscuro para legibilidad del texto.
-              MÁS OPACIDAD en el hero: from-slate-900/60 → oscurece ligeramente 
-              MENOS OPACIDAD: from-slate-900/10 → la foto se ve más limpia pero el texto puede perderse. */}
+          {/* Overlay para legibilidad */}
           <div className="absolute inset-0 bg-gradient-to-b from-slate-900/70 via-slate-900/40 to-slate-900/80 pointer-events-none" />
         </div>
 
-        {/* Contenido principal (texto + botones)
-            📏 MÁRGENES: Menos padding superior significa que el texto sube, 
-               haciendo que el hero no requiera ser gigantesco. El flex-grow lo centra. */}
+        {/* Contenido principal */}
         <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-32 flex-grow flex flex-col justify-center z-10">
           <motion.div
             initial="hidden"
@@ -100,12 +87,7 @@ export default function HeroSection() {
         </div>
       </section>
 
-      {/* ═══════════════════════════════════════════════════════════════
-          MÉTRICAS FLOTANTES
-          • Al ser 'absolute bottom-0 translate-y-1/2', su mitad queda 
-            en la portada y la mitad sobre el borde. 
-          • Esto ELIMINA totalmente "el margen inferior extra de la portada".
-          ═══════════════════════════════════════════════════════════════ */}
+      {/* Métricas flotantes */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-full max-w-5xl mx-auto px-2 sm:px-6 lg:px-8 z-30">
         <motion.div
           initial="hidden"
