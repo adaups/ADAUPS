@@ -303,14 +303,14 @@ export const transparencyData: TransparencyDocument[] = [
 /* events */
 export const eventsData: Event[] = [
   {
-    month: 'Jun',
-    day: '20',
+    month: 'ABR',
+    day: '01',
     tag: 'Institucional',
     colorClass: 'bg-emerald-50 text-emerald-600',
-    title: 'Asamblea General',
+    title: 'Asamblea General Ordinaria',
     description: 'Presentación de informes semestrales y resoluciones importantes para la asociación.',
-    time: '15:00 PM - 17:00 PM',
-    location: 'Auditorio Principal',
+    time: '14:00 PM',
+    location: 'Coliseo del Campus el Giron, Bloque B',
   },
 ];
 

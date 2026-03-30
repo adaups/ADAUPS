@@ -7,7 +7,8 @@ import { useAnimatedCounter } from '../../hooks/useAnimatedCounter';
 
 const backgroundImages = [
   '/images/event1.webp',
-  '/images/event2.webp'
+  '/images/event2.webp',
+  '/images/event3.webp'
 ];
 
 function AnimatedCounter({ end, duration = 2 }: { end: number; duration?: number }) {
