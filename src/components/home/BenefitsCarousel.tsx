@@ -12,14 +12,13 @@ type CarouselItem = {
 };
 
 const carouselItems: CarouselItem[] = [
-  { id: 'farmacias', img: '/images/partners/SANA-SANA.webp', alt: 'Sana Sana', label: 'Farmacias SanaSana' },
-  { id: 'farmacias', text: "Pharmacy's", label: 'Farmacias Pharmacy' },
-  { id: 'farmacias', img: '/images/partners/cruzazul.svg', alt: 'cruzazul', label: 'Farmacias Cruz Azul' },
-  { id: 'farmacias', img: '/images/partners/fybeca.webp', alt: 'fybeca', label: 'Farmacias Fybeca' },
-  { id: 'Tecnología', text: 'Tecnomega', label: 'Tecnología' },
-  { id: 'Seguro', img: '/images/partners/zurich.svg', alt: 'ZURICH', label: 'Seguro Zurich' },
-  { id: 'Papelería', text: 'DILIPA', label: 'Papelería' },
+  { id: 'Farmacias', img: '/images/partners/SANA-SANA.webp', alt: 'Sana Sana', label: 'Farmacias SanaSana' },
+  { id: 'Farmacias', text: "Pharmacy's", label: 'Farmacias Pharmacy' },
+  { id: 'Farmacias', img: '/images/partners/cruzazul.svg', alt: 'cruzazul', label: 'Farmacias Cruz Azul' },
+  { id: 'Farmacias', img: '/images/partners/fybeca.webp', alt: 'fybeca', label: 'Farmacias Fybeca' },
+  { id: 'Seguros', img: '/images/partners/zurich.svg', alt: 'ZURICH', label: 'Seguros Zurich' },
   { id: 'Optica', img: '/images/partners/lenslook.webp', alt: 'Lens Look', label: 'Optica Lens Look' },
+  { id: 'ajamar', img: '/images/partners/ajamar.webp', alt: 'Seafood Ajamar', label: 'Seafood Ajamar' },
 ];
 
 export default function BenefitsCarousel() {

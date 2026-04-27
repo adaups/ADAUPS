@@ -118,7 +118,7 @@ export default function EventsSection() {
   const useCarousel = eventsData.length > CARDS_PER_PAGE;
 
   return (
-    <section className="pt-32 md:pt-36 pb-10 relative overflow-hidden bg-slate-50">
+    <section className="pt-12 md:pt-16 pb-10 relative overflow-hidden bg-slate-50">
       
       <div className="absolute inset-0 z-0 opacity-25 pointer-events-none" 
            style={{ backgroundImage: 'radial-gradient(circle, #94a3b8 2px, transparent 0)', backgroundSize: '48px 48px' }} 

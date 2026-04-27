@@ -73,6 +73,30 @@ export interface NewsItem {
   content: string[];
 }
 
+export interface ProductItem {
+  id: string;
+  name: string;
+  price: string;
+  originalPrice?: string;
+  description?: string;
+  unit: string;
+  icon?: string;
+}
+
+export interface Promotion {
+  id: string;
+  title: string;
+  category: string;
+  shortDescription: string;
+  description: string;
+  image?: string;
+  images?: string[];
+  validUntil: string;
+  featured: boolean;
+  ctaText: string;
+  items?: ProductItem[];
+}
+
 // --- Navigation ---
 
 interface NavChild {

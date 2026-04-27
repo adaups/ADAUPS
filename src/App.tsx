@@ -21,17 +21,17 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="sobre-adaups" element={<About />} />
-          
+
           <Route path="servicios">
             <Route index element={<Services />} />
             <Route path=":serviceId" element={<ServiceDetail />} />
           </Route>
-          
+
           <Route path="beneficios">
             <Route index element={<Benefits />} />
             <Route path=":benefitId" element={<BenefitDetail />} />
           </Route>
-          
+
           <Route path="transparencia" element={<Transparency />} />
           <Route path="noticias">
             <Route index element={<News />} />

@@ -161,6 +161,34 @@ export const servicesData: Service[] = [
 ];
 
 export const benefitsData: Benefit[] = [
+
+  {
+    id: 'ajamar',
+    title: 'Seafood Ajamar',
+    category: 'Alianzas Comerciales',
+    shortDescription: 'Productos del mar premium, pesca sostenible y calidad garantizada.',
+    description: 'Seafood Ajamar es un aliado estratégico especializado en productos del mar provenientes de pesca artesanal sostenible. Su compromiso con la calidad, la innovación y el comercio justo beneficia a cientos de familias pesqueras de Manabí y Esmeraldas, ofreciendo productos frescos, congelados y elaborados con altos estándares nacionales e internacionales.',
+    conditions: [
+      'Productos 100% ecuatorianos.',
+      'Pesca artesanal responsable y sostenible.',
+      'Procesos de congelación IQF.',
+      'Productos libres de preservantes.',
+      'Comercio justo para comunidades pesqueras.',
+      'Disponibilidad de productos frescos, congelados y elaborados.'
+    ],
+    howToUse: 'Contáctanos para recibir asesoría personalizada, solicitar el catálogo completo, cotizar productos o realizar pedidos al por mayor y menor.',
+    locations: 'Quito, Manabí, Esmeraldas y distribución a nivel nacional.',
+    contact: 'Seafood Ajamar - 0999142252',
+    images: [
+      '/images/partners/ajamar.webp'
+    ],
+    documents: [
+      {
+        name: 'Catálogo Seafood Ajamar',
+        url: '/documents/catalogo-seafood-ajamar.pdf'
+      }
+    ]
+  }
   /*
   {
     id: 'seguro-vehicular',
@@ -317,7 +345,7 @@ export const eventsData: Event[] = [
 /* news  */
 export const newsData: NewsItem[] = [
   {
-    id: 'news1',
+    id: 'nuevo-portal',
     title: 'Lanzamiento del Nuevo Portal ADAUPS',
     category: 'Institucional',
     date: '2026-03-10',
@@ -330,32 +358,32 @@ export const newsData: NewsItem[] = [
       'Entre las principales mejoras, destacamos una navegación más intuitiva, un diseño enfocado en la usabilidad y nuevas secciones orientadas a la transparencia institucional.',
       'Invitamos a toda la comunidad de docentes y administrativos a explorar el portal, aprovechar los recursos disponibles y compartir sus comentarios para seguir mejorando de forma continua.'
     ]
-    
+
   },
-  
+
   {
-    id: 'news2',
+    id: 'asamblea-2026',
     title: 'Resultados Oficiales de la Consulta Popular: Asamblea General ADAUPS-Q 2026',
     category: 'Eventos',
     date: '2026-04-01',
     summary: 'Presentamos el informe detallado de las 11 resoluciones clave aprobadas por los socios de ADAUPS-Q, reflejando un firme respaldo a la transparencia y la regularización institucional.',
     imageUrl: '/images/news/new2.webp', // Imagen de cabecera generada anteriormente
-    
+
     content: [
       'El día de ayer concluyó con éxito el proceso de consulta democrática de la ADAUPS-Q. Con una participación que alcanzó picos de más de 540 socios en temas críticos, presentamos los resultados oficiales que marcarán la gestión administrativa de este periodo.',
-      
+
       // PREGUNTA 1
       'Pregunta 1: Aprobación del Presupuesto de la ADAUPS-Q para el año 2026, en los términos y montos presentados ante la Asamblea General. (Aprobado con el 95% de los votos)',
       'IMAGE: /images/news/consult1.webp',
-      
+
       // PREGUNTA 2
       'Pregunta 2: Reforma al Artículo 21 del Reglamento referente al Fondo de Reserva: Elección entre Tasa Referencial Variable o Tasa Fija Anual. (Resultado: 59% a favor de la Tasa Fija Anual)',
       'IMAGE: /images/news/consult2.webp',
-      
+
       // PREGUNTA 3
       'Pregunta 3: Autorización para la realización de un estudio técnico y el diseño de un proyecto integral con el objetivo de regularizar procesos institucionales. (Aprobado con el 75%)',
       'IMAGE: /images/news/consult3.webp',
-      
+
       // PREGUNTA 4
       'Pregunta 4: Ratificación sobre la identificación de un riesgo operativo alto en el trabajo contable y financiero de la asociación debido a factores estructurales. (Confirmado con el 88%)',
       'IMAGE: /images/news/consult4.webp',
@@ -387,9 +415,9 @@ export const newsData: NewsItem[] = [
       // PREGUNTA 11
       'Pregunta 11: Aprobación del acta de la Asamblea General de Socios celebrada el 11 de junio de 2025, ratificando su contenido respecto a las deliberaciones. (Aprobado con el 97%)',
       'IMAGE: /images/news/consult11.webp',
-      
+
       'Los resultados reflejan un sólido respaldo a las propuestas de la directiva, especialmente en temas críticos como el presupuesto y la regularización de deudas institucionales. Estas decisiones nos permiten avanzar con orden y seguridad jurídica.',
-      'Agradecemos profundamente a todos los socios por su activa participación en este proceso democrático. Seguiremos construyendo juntos el futuro de ADAUPS-Q.'    ]
-}
+      'Agradecemos profundamente a todos los socios por su activa participación en este proceso democrático. Seguiremos construyendo juntos el futuro de ADAUPS-Q.']
+  }
 
 ];
