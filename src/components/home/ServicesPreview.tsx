@@ -36,7 +36,7 @@ const services = [
 
 export default function ServicesPreview() {
   return (
-    <section className="py-14 bg-slate-50 relative overflow-hidden border-y border-slate-200">
+    <section className="pt-28 md:pt-32 pb-16 bg-slate-50 relative overflow-hidden border-b border-slate-200">
       <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-blue-100/50 rounded-full mix-blend-multiply filter blur-3xl opacity-60" />
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-50/50 rounded-full mix-blend-multiply filter blur-3xl opacity-60" />
@@ -51,9 +51,14 @@ export default function ServicesPreview() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, i) => {
             const cardClass =
-              'group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full hover:-translate-y-1';
+              'group relative bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col h-full hover:-translate-y-1 hover:scale-[1.02] overflow-hidden cursor-pointer';
             const inner = (
               <>
+                {/* Número decorativo de fondo */}
+                <span className="absolute -bottom-3 -right-2 text-8xl font-black text-slate-100 select-none pointer-events-none leading-none group-hover:text-blue-50 transition-colors duration-300">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+
                 <div className="flex items-start mb-4 relative z-10">
                   <div className="flex items-center justify-center bg-blue-50 rounded-xl w-12 h-12 group-hover:bg-blue-600 transition-colors duration-300">
                     <service.icon className="w-6 h-6 text-blue-600 group-hover:text-white transition-colors" />

@@ -2,54 +2,73 @@
 
 @theme {
   --animate-marquee: marquee 25s linear infinite;
-  
+
   @keyframes marquee {
-    0% { transform: translateX(0%); }
+    0%   { transform: translateX(0%); }
     100% { transform: translateX(-50%); }
   }
+
+  /* ── ADAUPS Brand Tokens ─────────────────────────────── */
+  --color-navy:      #1E3165;   /* Azul marino institucional  */
+  --color-navy-light:#2B4BA0;   /* Azul marino suave          */
+  --color-gold:      #C9960C;   /* Dorado institucional       */
+  --color-gold-light:#F0B429;   /* Dorado claro / highlight   */
 }
 
-/* === Scroll-triggered animations === */
+/* ══════════════════════════════════════════════════════════
+   Scroll-triggered animations  —  Emil Kowalski style
+   · expo-out easing : cubic-bezier(0.16, 1, 0.3, 1)
+   · translateY 10px  (sutil, no 24 px)
+   · 450 ms max  (no 700 ms)
+   · will-change para GPU antes; auto después
+   ══════════════════════════════════════════════════════════ */
+
 .animate-in {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.7s cubic-bezier(0.21, 0.47, 0.32, 0.98),
-              transform 0.7s cubic-bezier(0.21, 0.47, 0.32, 0.98);
+  transform: translateY(10px);
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
 }
 
 .animate-in.is-visible {
   opacity: 1;
   transform: translateY(0);
+  will-change: auto;
 }
 
-/* Stagger delays for children */
-.stagger-1 { transition-delay: 0.1s; }
-.stagger-2 { transition-delay: 0.2s; }
-.stagger-3 { transition-delay: 0.25s; }
-.stagger-4 { transition-delay: 0.35s; }
-.stagger-5 { transition-delay: 0.45s; }
+/* Stagger delays — tiempos ajustados, más apretados */
+.stagger-1 { transition-delay: 0.06s; }
+.stagger-2 { transition-delay: 0.12s; }
+.stagger-3 { transition-delay: 0.18s; }
+.stagger-4 { transition-delay: 0.24s; }
+.stagger-5 { transition-delay: 0.30s; }
 
 /* Scale-in variant */
 .animate-scale-in {
   opacity: 0;
   transform: scale(0.97);
-  transition: opacity 0.8s cubic-bezier(0.21, 0.47, 0.32, 0.98),
-              transform 0.8s cubic-bezier(0.21, 0.47, 0.32, 0.98);
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
 }
 
 .animate-scale-in.is-visible {
   opacity: 1;
   transform: scale(1);
+  will-change: auto;
 }
 
 /* Fade-only variant */
 .animate-fade {
   opacity: 0;
-  transition: opacity 0.6s ease-out;
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity;
 }
 
 .animate-fade.is-visible {
   opacity: 1;
+  will-change: auto;
 }
 
 /* Hero carousel crossfade */
@@ -76,6 +95,23 @@
   transform: translateX(0);
 }
 
+/* Lightbox / modal pop-in — Emil Kowalski expo-out */
+@keyframes overlay-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.animate-overlay-fade {
+  animation: overlay-fade 0.25s ease-out;
+}
+
+@keyframes modal-pop {
+  from { opacity: 0; transform: scale(0.94) translateY(10px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+.animate-modal-pop {
+  animation: modal-pop 0.34s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 /* Respect reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   .animate-in,
@@ -85,5 +121,9 @@
   .carousel-slide {
     transition-duration: 0.01s !important;
     transition-delay: 0s !important;
+  }
+  .animate-overlay-fade,
+  .animate-modal-pop {
+    animation-duration: 0.01s !important;
   }
 }

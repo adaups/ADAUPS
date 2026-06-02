@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { useInView } from '../../hooks/useInView';
@@ -17,13 +17,23 @@ function AnimatedCounter({ end, duration = 2 }: { end: number; duration?: number
 
 export default function HeroSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [heroReady, setHeroReady] = useState(false);
   const { ref: metricsRef, isInView: metricsVisible } = useInView({ threshold: 0.2 });
+  const rafRef = useRef<number>(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length);
     }, 5000);
     return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    // Double RAF: first frame completes initial paint, second triggers the transition
+    rafRef.current = requestAnimationFrame(() => {
+      rafRef.current = requestAnimationFrame(() => setHeroReady(true));
+    });
+    return () => cancelAnimationFrame(rafRef.current);
   }, []);
 
   return (
@@ -53,19 +63,19 @@ export default function HeroSection() {
         {/* Contenido principal */}
         <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-32 flex-grow flex flex-col justify-center z-10">
           <div className="max-w-3xl">
-            <h1 className="animate-in is-visible text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight drop-shadow-lg">
-              Bienvenido a <span className="text-blue-400">ADAUPS</span>
+            <h1 className={`animate-in ${heroReady ? 'is-visible' : ''} text-4xl md:text-6xl font-black tracking-tight mb-6 leading-tight drop-shadow-lg`}>
+              Bienvenido a <span className="text-amber-300">ADAUPS</span>
             </h1>
-            <p className="animate-in is-visible stagger-1 text-lg md:text-xl text-slate-200 mb-10 max-w-2xl leading-relaxed drop-shadow-md">
+            <p className={`animate-in ${heroReady ? 'is-visible' : ''} stagger-1 text-lg md:text-xl text-slate-300 mb-10 max-w-2xl leading-relaxed drop-shadow-md`}>
               Asociación de Docentes, Administrativos y Servicios de la Universidad Politécnica Salesiana - Sede Quito. Brindamos servicios financieros, convenios y apoyo solidario a nuestros socios.
             </p>
 
-            <div className="animate-in is-visible stagger-2 flex flex-col sm:flex-row gap-4">
+            <div className={`animate-in ${heroReady ? 'is-visible' : ''} stagger-2 flex flex-col sm:flex-row gap-4`}>
               <a
                 href="https://finanzas.adaups.org"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex justify-center items-center px-8 py-4 text-base font-semibold rounded-full text-white bg-blue-600 hover:bg-blue-500 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300"
+                className="group inline-flex justify-center items-center px-8 py-4 text-base font-semibold rounded-full text-white bg-amber-500 hover:bg-amber-400 shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50 transition-all duration-300"
               >
                 Acceso a Finanzas en línea
                 <ArrowRight className="ml-2 -mr-1 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -89,7 +99,7 @@ export default function HeroSection() {
         >
           <div className="flex flex-col items-center justify-center">
             <span className="text-2xl md:text-5xl font-black text-slate-900 mb-1 md:mb-2">
-              <AnimatedCounter end={800} />
+              <AnimatedCounter end={800} /><span className="text-blue-500">+</span>
             </span>
             <span className="text-[10px] md:text-sm font-bold text-slate-500 uppercase tracking-wider">Socios</span>
           </div>
@@ -101,7 +111,7 @@ export default function HeroSection() {
           </div>
           <div className="flex flex-col items-center justify-center">
             <span className="text-2xl md:text-5xl font-black text-slate-900 mb-1 md:mb-2">
-              <AnimatedCounter end={10} />
+              <AnimatedCounter end={10} /><span className="text-blue-500">+</span>
             </span>
             <span className="text-[10px] md:text-sm font-bold text-slate-500 uppercase tracking-wider">Convenios</span>
           </div>
