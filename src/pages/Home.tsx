@@ -9,10 +9,10 @@ export default function Home() {
   return (
     <div className="bg-slate-50 overflow-hidden">
       <HeroSection />
-      <PromotionsSection />
-      <EventsSection />
-      <NewsSection />
       <ServicesPreview />
+      <EventsSection />
+      <PromotionsSection />
+      <NewsSection />
       <BenefitsCarousel />
     </div>
   );

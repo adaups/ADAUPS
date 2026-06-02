@@ -340,6 +340,20 @@ export const eventsData: Event[] = [
     time: '14:00 PM',
     location: 'Coliseo del Campus el Giron, Bloque B',
   },
+  {
+    month: 'JUN',
+    day: '04',
+    tag: 'Taller',
+    colorClass: 'bg-amber-50 text-amber-700',
+    title: 'Domina Tus Finanzas Sin Ser Experto en Números',
+    shortTitle: 'Domina Tus Finanzas',
+    description: 'Aprende a controlar tus gastos, salir de deudas e invertir con confianza. Sorteo exclusivo al final.',
+    time: '14:00 PM',
+    location: 'Aula 5A, Bloque A, Segundo piso',
+    imageUrl: '/images/events/taller-finanzas.webp',
+    spotsLabel: 'Cupos limitados',
+    registerEmail: 'adaupsuio@ups.edu.ec',
+  },
 ];
 
 /* news  */

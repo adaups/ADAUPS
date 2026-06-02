@@ -58,9 +58,13 @@ export interface Event {
   tag: string;
   colorClass: string;
   title: string;
+  shortTitle?: string;
   description: string;
   time: string;
   location: string;
+  imageUrl?: string;
+  spotsLabel?: string;     // Ej: "Cupos limitados" — sticker de escasez
+  registerEmail?: string;  // Habilita el botón "Registrarse" (mailto)
 }
 
 export interface NewsItem {

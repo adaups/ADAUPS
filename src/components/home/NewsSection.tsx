@@ -33,7 +33,7 @@ export default function NewsSection() {
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight mb-2">
               Últimas Noticias
             </h2>
-            <p className="text-sm md:text-base text-slate-500">
+            <p className="text-sm md:text-base text-slate-600 leading-relaxed">
               Mantente informado con los comunicados oficiales y actualizaciones importantes.
             </p>
           </div>
@@ -96,13 +96,16 @@ export default function NewsSection() {
                         </h3>
                         
                         {/* Summary - Hidden by default on small cards, revealed on hover/expanded */}
-                        <div className={`
-                          overflow-hidden transition-all duration-700 ease-in-out
-                          ${isFirst 
-                            ? 'max-h-24 opacity-100 lg:group-hover/accordion:max-h-0 lg:group-hover/accordion:opacity-0 lg:group-hover/card:!max-h-24 lg:group-hover/card:!opacity-100' 
-                            : 'max-h-0 opacity-0 lg:group-hover/card:max-h-24 lg:group-hover/card:opacity-100'
-                          }
-                        `}>
+                        <div
+                          className={`
+                            overflow-hidden transition-all duration-700
+                            ${isFirst
+                              ? 'max-h-24 opacity-100 lg:group-hover/accordion:max-h-0 lg:group-hover/accordion:opacity-0 lg:group-hover/card:!max-h-24 lg:group-hover/card:!opacity-100'
+                              : 'max-h-0 opacity-0 lg:group-hover/card:max-h-24 lg:group-hover/card:opacity-100'
+                            }
+                          `}
+                          style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
+                        >
                           <p className="text-slate-300 text-sm line-clamp-2 mb-4 mt-1">
                             {news.summary}
                           </p>

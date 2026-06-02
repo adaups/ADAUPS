@@ -6,3 +6,9 @@ coverage/
 *.log
 .env*
 !.env.example
+
+#skills
+.claude
+.agents/
+skills-lock.json
+CLAUDE.md

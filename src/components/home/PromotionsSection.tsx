@@ -25,7 +25,7 @@ export default function PromotionsSection() {
   if (!featuredPromotion) return null;
 
   return (
-    <section className="relative pt-28 md:pt-32 pb-12 md:pb-16 bg-slate-50 overflow-hidden border-b border-slate-200">
+    <section className="relative py-16 bg-slate-50 overflow-hidden border-b border-slate-200">
       {/* Background Effects matching the elegant flyer */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-amber-600/10 rounded-full blur-[100px] -translate-y-1/3 translate-x-1/3 mix-blend-multiply" />
@@ -42,16 +42,16 @@ export default function PromotionsSection() {
 
           <div className="grid lg:grid-cols-12 gap-0 items-stretch relative z-10">
             {/* Content Side */}
-            <div className="lg:col-span-5 p-6 md:p-8 lg:p-10 flex flex-col justify-center bg-white/80 backdrop-blur-sm z-20">
+            <div className="lg:col-span-5 p-6 md:p-8 flex flex-col justify-center bg-white/80 backdrop-blur-sm z-20">
               <span className="inline-block text-amber-600 font-bold tracking-widest text-xs uppercase mb-3 border border-amber-200 bg-amber-50 px-3 py-1 rounded-full w-max">
                 Exclusivo Socios ADAUPS
               </span>
-              
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 leading-tight tracking-tight">
+
+              <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-3 leading-tight tracking-tight">
                 {featuredPromotion.title}
               </h2>
 
-              <p className="text-lg text-slate-600 mb-6 leading-relaxed whitespace-pre-line">
+              <p className="text-sm md:text-base text-slate-600 mb-6 leading-relaxed whitespace-pre-line">
                 {featuredPromotion.shortDescription}
               </p>
 
@@ -77,22 +77,18 @@ export default function PromotionsSection() {
              
             </div>
 
-            {/* Image Side Carousel - Premium Floating Variant */}
-            <div className="lg:col-span-7 relative min-h-[400px] lg:min-h-[550px] overflow-hidden bg-gradient-to-br from-stone-100 to-stone-200 flex items-center justify-center p-2 md:p-4">
+            {/* Image Side Carousel */}
+            <div className="lg:col-span-7 relative min-h-[320px] lg:min-h-[420px] overflow-hidden bg-gradient-to-br from-stone-100 to-stone-200 flex items-center justify-center p-2 md:p-4">
                <div className="absolute inset-0 bg-white/40 z-10 hidden lg:block backdrop-blur-[2px]" />
-              
-               {/* Decorative background blob for the image */}
-               <div className="absolute w-64 h-64 bg-amber-400/30 rounded-full blur-[80px] z-10 mix-blend-multiply" />
+               <div className="absolute w-48 h-48 bg-amber-400/30 rounded-full blur-[80px] z-10 mix-blend-multiply" />
 
-                <div className="relative w-fit h-fit max-w-full max-h-full z-20 rounded-[2rem] overflow-hidden shadow-2xl ring-1 ring-black/5 transform transition-transform hover:scale-105 duration-700 bg-gradient-to-b from-white to-slate-50 flex items-center justify-center group">
-                
-                {/* Images */}
+                <div className="relative w-fit h-fit max-w-full max-h-full z-20 rounded-[1.5rem] overflow-hidden shadow-xl ring-1 ring-black/5 transform transition-transform hover:scale-105 duration-700 bg-gradient-to-b from-white to-slate-50 flex items-center justify-center group">
                 {images.map((src, idx) => (
                   <img
                     key={`${src}-${idx}`}
                     src={src}
                     alt={`${featuredPromotion.title} - Imagen ${idx + 1}`}
-                    className={`w-full h-full max-h-[500px] object-contain object-center drop-shadow-2xl transition-all duration-1000 ease-in-out ${idx === currentImageIndex ? 'relative opacity-100 scale-100' : 'absolute inset-0 opacity-0 scale-95'}`}
+                    className={`w-full h-full max-h-[360px] object-contain object-center drop-shadow-2xl transition-all duration-1000 ease-in-out ${idx === currentImageIndex ? 'relative opacity-100 scale-100' : 'absolute inset-0 opacity-0 scale-95'}`}
                   />
                 ))}
                </div>

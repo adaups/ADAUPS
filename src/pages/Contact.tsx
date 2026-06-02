@@ -27,7 +27,7 @@ export default function Contact() {
 
             <div className="grid sm:grid-cols-2 gap-6">
               <a
-                href="mailto:adaups@ups.edu.ec"
+                href="mailto:adaupsuio@ups.edu.ec"
                 className="flex items-center gap-4 bg-white/5 hover:bg-white/10 rounded-2xl p-5 transition-colors group"
               >
                 <div className="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center group-hover:bg-blue-500/30 transition-colors">
