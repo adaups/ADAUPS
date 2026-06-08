@@ -339,6 +339,7 @@ export const eventsData: Event[] = [
     description: 'Presentación de informes semestrales y resoluciones importantes para la asociación.',
     time: '14:00 PM',
     location: 'Coliseo del Campus el Giron, Bloque B',
+    imageUrl: '/images/news/new2.webp',
   },
   {
     month: 'JUN',
@@ -351,13 +352,31 @@ export const eventsData: Event[] = [
     time: '14:00 PM',
     location: 'Aula 5A, Bloque A, Segundo piso',
     imageUrl: '/images/events/taller-finanzas.webp',
-    spotsLabel: 'Cupos limitados',
-    registerEmail: 'adaupsuio@ups.edu.ec',
   },
 ];
 
 /* news  */
 export const newsData: NewsItem[] = [
+  {
+    id: 'dia-trabajador-2026',
+    title: 'Conmemoración del Día del Trabajador y Sorteo ADAUPS',
+    category: 'Eventos',
+    date: '2026-05-22',
+    summary: 'La Universidad Politécnica Salesiana celebró el Día del Trabajador con una jornada de confraternidad, reconocimientos y actividades especiales para toda la comunidad universitaria.',
+    imageUrl: '/images/news/work.webp',
+    content: [
+      'El pasado viernes 22 de mayo se llevó a cabo la conmemoración del Día del Trabajador, un evento organizado por la Universidad Politécnica Salesiana con el propósito de reconocer y agradecer el esfuerzo, compromiso y dedicación de quienes contribuyen diariamente al desarrollo de nuestra institución.',
+      'La jornada estuvo marcada por un ambiente de compañerismo y celebración, en el que docentes, administrativos y colaboradores compartieron momentos de integración y reconocimiento, fortaleciendo los lazos que caracterizan a nuestra comunidad universitaria.',
+      'Como parte de esta importante celebración, ADAUPS realizó un sorteo especial dirigido a sus socios, entregando diversos premios en homenaje al Día del Trabajador. Esta actividad permitió reconocer y agradecer la participación activa de nuestros afiliados, generando momentos de alegría y entusiasmo entre los asistentes.',
+      'Felicitamos a los ganadores del sorteo y agradecemos a todos quienes participaron en esta jornada conmemorativa. ADAUPS reafirma su compromiso de continuar promoviendo espacios de integración, bienestar y reconocimiento para toda la comunidad de docentes y administrativos.'
+    ],
+    gallery: [
+      '/images/news/winner1.webp',
+      '/images/news/winner2.webp',
+      '/images/news/winner3.webp',
+      '/images/news/winner4.webp',
+    ]
+  },
   {
     id: 'nuevo-portal',
     title: 'Lanzamiento del Nuevo Portal ADAUPS',

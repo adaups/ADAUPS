@@ -75,6 +75,7 @@ export interface NewsItem {
   summary: string;
   imageUrl: string;
   content: string[];
+  gallery?: string[]; // Galería de fotos opcional (se muestra al final del artículo)
 }
 
 export interface ProductItem {

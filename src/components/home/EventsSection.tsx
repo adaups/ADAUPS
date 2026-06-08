@@ -97,7 +97,9 @@ function EventCard({ event, delay = 0 }: { event: Event; delay?: number }) {
                 {/* Barra de affordance PERSISTENTE (visible en móvil y desktop) */}
                 <div className="absolute bottom-0 left-0 right-0 flex items-center justify-center gap-1.5 py-2 bg-black/45 backdrop-blur-sm group-hover:bg-amber-500/95 transition-colors duration-300">
                   <Eye className="w-3.5 h-3.5 text-white" />
-                  <span className="text-white text-[11px] font-black tracking-wide">Toca para ver la invitación</span>
+                  <span className="text-white text-[11px] font-black tracking-wide">
+                    {event.registerEmail ? 'Ver invitación' : 'Ver imagen del evento'}
+                  </span>
                   <ArrowUpRight className="w-3.5 h-3.5 text-white opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all duration-300" />
                 </div>
               </>
