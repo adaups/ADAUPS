@@ -29,6 +29,15 @@ function buildRegisterMailto(event: Event): string {
   return `https://outlook.office.com/mail/deeplink/compose?to=${encodeURIComponent(event.registerEmail ?? '')}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
+function DateChip({ month, day, className }: { month: string; day: string; className: string }) {
+  return (
+    <div className={`rounded-xl px-2.5 py-2 text-center min-w-[2.8rem] ${className}`}>
+      <span className="block text-[10px] font-black uppercase">{month}</span>
+      <span className="block text-xl font-black leading-none">{day}</span>
+    </div>
+  );
+}
+
 function EventCard({ event, delay = 0 }: { event: Event; delay?: number }) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [registering, setRegistering] = useState(false);
@@ -77,7 +86,7 @@ function EventCard({ event, delay = 0 }: { event: Event; delay?: number }) {
           onKeyDown={isClickable ? (e) => (e.key === 'Enter' || e.key === ' ') && (e.preventDefault(), setLightboxOpen(true)) : undefined}
         >
           {/* ── Visual Header ── */}
-          <div className={`relative h-36 overflow-hidden flex-shrink-0 rounded-t-2xl ${!event.imageUrl ? event.colorClass : 'bg-slate-900'}`}>
+          <div className={`relative aspect-[25/16] overflow-hidden flex-shrink-0 rounded-t-2xl ${!event.imageUrl ? event.colorClass : 'bg-slate-900'}`}>
             {event.imageUrl ? (
               <>
                 <img
@@ -86,12 +95,17 @@ function EventCard({ event, delay = 0 }: { event: Event; delay?: number }) {
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent pointer-events-none" />
 
-                {/* Date chip */}
-                <div className={`absolute top-3 left-3 ${event.colorClass} rounded-xl px-2.5 py-2 text-center min-w-[2.8rem] shadow-lg`}>
-                  <span className="block text-[10px] font-black uppercase">{event.month}</span>
-                  <span className="block text-xl font-black leading-none">{event.day}</span>
+                {/* Date chip (rango si hay dayEnd) */}
+                <div className="absolute top-3 left-3 flex items-center gap-1.5">
+                  <DateChip month={event.month} day={event.day} className={`${event.colorClass} shadow-lg`} />
+                  {event.dayEnd && (
+                    <>
+                      <span className="text-white font-black text-lg drop-shadow-md">–</span>
+                      <DateChip month={event.monthEnd ?? event.month} day={event.dayEnd} className={`${event.colorClass} shadow-lg`} />
+                    </>
+                  )}
                 </div>
 
                 {/* Barra de affordance PERSISTENTE (visible en móvil y desktop) */}
@@ -108,9 +122,14 @@ function EventCard({ event, delay = 0 }: { event: Event; delay?: number }) {
                 <span className="absolute right-3 -bottom-4 text-[6rem] font-black opacity-[0.07] leading-none select-none pointer-events-none">
                   {event.day}
                 </span>
-                <div className="absolute bottom-3 left-3 bg-white rounded-xl px-2.5 py-2 text-center min-w-[2.8rem] shadow-sm">
-                  <span className="block text-[10px] font-black uppercase">{event.month}</span>
-                  <span className="block text-xl font-black leading-none">{event.day}</span>
+                <div className="absolute bottom-3 left-3 flex items-center gap-1.5">
+                  <DateChip month={event.month} day={event.day} className="bg-white shadow-sm" />
+                  {event.dayEnd && (
+                    <>
+                      <span className="font-black text-lg">–</span>
+                      <DateChip month={event.monthEnd ?? event.month} day={event.dayEnd} className="bg-white shadow-sm" />
+                    </>
+                  )}
                 </div>
               </>
             )}

@@ -5,23 +5,28 @@ import AnimateOnScroll from '../ui/AnimateOnScroll';
 type CarouselItem = {
   id: string;
   img?: string;
+  /** Ancho real del logo a 40px de alto (evita reflow al cargar: ver nota en el <img>) */
+  imgWidth?: number;
   text?: string;
   alt?: string;
   label: string;
 };
 
 const carouselItems: CarouselItem[] = [
-  { id: 'Farmacias', img: '/images/partners/SANA-SANA.webp',  alt: 'Sana Sana',      label: 'Farmacias SanaSana' },
-  { id: 'Farmacias', text: "Pharmacy's",                                               label: "Pharmacy's" },
-  { id: 'Farmacias', img: '/images/partners/cruzazul.svg',    alt: 'Cruz Azul',       label: 'Cruz Azul' },
-  { id: 'Farmacias', img: '/images/partners/fybeca.webp',     alt: 'Fybeca',          label: 'Farmacias Fybeca' },
-  { id: 'Seguros',   img: '/images/partners/zurich.svg',      alt: 'ZURICH',          label: 'Seguros Zurich' },
-  { id: 'Optica',    img: '/images/partners/lenslook.webp',   alt: 'Lens Look',       label: 'Óptica Lens Look' },
-  { id: 'ajamar',    img: '/images/partners/ajamar.webp',     alt: 'Seafood Ajamar',  label: 'Seafood Ajamar' },
+  { id: 'Farmacias', img: '/images/partners/SANA-SANA.webp',  imgWidth: 40,  alt: 'Sana Sana',      label: 'Farmacias SanaSana' },
+  { id: 'credito-empresarial-difare', img: '/images/partners/pharmacys.png', imgWidth: 133, alt: "Pharmacy's", label: "Pharmacy's" },
+  { id: 'credito-empresarial-difare', img: '/images/partners/cruzazul.svg', imgWidth: 165, alt: 'Cruz Azul', label: 'Cruz Azul' },
+  { id: 'Farmacias', img: '/images/partners/fybeca.webp',     imgWidth: 40,  alt: 'Fybeca',          label: 'Farmacias Fybeca' },
+  { id: 'Seguros',   img: '/images/partners/zurich.svg',      imgWidth: 154, alt: 'ZURICH',          label: 'Seguros Zurich' },
+  { id: 'Optica',    img: '/images/partners/lenslook.webp',   imgWidth: 40,  alt: 'Lens Look',       label: 'Óptica Lens Look' },
+  { id: 'ajamar',    img: '/images/partners/ajamar.webp',     imgWidth: 79,  alt: 'Seafood Ajamar',  label: 'Seafood Ajamar' },
 ];
 
-// Lista plana duplicada para loop continuo sin wrappers intermedios
-const marqueeItems = [...carouselItems, ...carouselItems];
+// Lista plana duplicada 4x: un set (7 logos) mide ~1344px, insuficiente para
+// pantallas anchas (>1344px) con solo 2 copias — el track se quedaba sin
+// contenido antes de completar el ciclo, mostrando un hueco antes de reiniciar.
+// Con 4 copias el track (~5376px) cubre monitores ultra-anchos sin cortes.
+const marqueeItems = [...carouselItems, ...carouselItems, ...carouselItems, ...carouselItems];
 
 export default function BenefitsCarousel() {
   return (
@@ -40,13 +45,13 @@ export default function BenefitsCarousel() {
         </p>
       </AnimateOnScroll>
 
-      {/* Marquee — lista plana, un solo elemento animado */}
-      <div className="relative flex overflow-x-hidden group mb-10">
+      {/* Marquee — lista plana, un solo elemento animado, siempre continuo (sin pausa por hover) */}
+      <div className="relative flex overflow-x-hidden mb-10">
         <div className="absolute left-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-r from-slate-900 to-transparent pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-l from-slate-900 to-transparent pointer-events-none" />
 
         <div
-          className="animate-marquee flex whitespace-nowrap group-hover:[animation-play-state:paused]"
+          className="animate-marquee flex whitespace-nowrap"
           style={{ willChange: 'transform' }}
         >
           {marqueeItems.map((item, idx) => (
@@ -59,10 +64,9 @@ export default function BenefitsCarousel() {
                 <img
                   src={item.img}
                   alt={item.alt}
-                  width={100}
+                  width={item.imgWidth ?? 100}
                   height={40}
                   className="h-10 w-auto object-contain mb-2.5 group-hover/card:scale-105 transition-transform duration-300"
-                  loading="lazy"
                   onError={(e) => {
                     const el = e.currentTarget;
                     el.style.display = 'none';

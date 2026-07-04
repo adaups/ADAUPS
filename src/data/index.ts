@@ -188,6 +188,33 @@ export const benefitsData: Benefit[] = [
         url: '/documents/catalogo-seafood-ajamar.pdf'
       }
     ]
+  },
+  {
+    id: 'credito-empresarial-difare',
+    title: 'Crédito Empresarial DIFARE',
+    category: 'Salud',
+    shortDescription: "20% de descuento en Farmacias Cruz Azul y Pharmacy's, diferible hasta a 3 meses.",
+    description: 'Como colaborador de ADAUPS cuentas con un Crédito Empresarial en Farmacias Cruz Azul y Pharmacy\'s: 20% de descuento, cupo mensual renovable y la opción de diferir tus compras. Tu cédula de identidad es tu único requisito para acceder al beneficio.',
+    conditions: [
+      '20% de descuento en tus compras.',
+      'Diferible hasta a 3 meses.',
+      'Cupo con corte el día 15 y renovación automática el 16 de cada mes.',
+      "Vigente en Pharmacy's en quincena y fin de mes.",
+      'Vigente en Cruz Azul el primer viernes laborable del mes.',
+      "Compra mínima de $10 en Cruz Azul y $20 en Pharmacy's."
+    ],
+    howToUse: 'Presenta tu cédula de identidad en caja: tu cédula es tu crédito. No se requiere tarjeta física.',
+    locations: "Farmacias Cruz Azul y Pharmacy's a nivel nacional y en sus tiendas en línea.",
+    contact: 'Oficinas ADAUPS',
+    images: [
+      '/images/partners/cruzazul.svg',
+      '/images/partners/pharmacys.png'
+    ],
+    documents: [],
+    gallery: [
+      '/images/partners/difare-1.webp',
+      '/images/partners/difare-2.webp'
+    ]
   }
   /*
   {
@@ -352,6 +379,20 @@ export const eventsData: Event[] = [
     time: '14:00 PM',
     location: 'Aula 5A, Bloque A, Segundo piso',
     imageUrl: '/images/events/taller-finanzas.webp',
+  },
+  {
+    month: 'JUN',
+    day: '26',
+    monthEnd: 'JUL',
+    dayEnd: '08',
+    tag: 'Campaña Solidaria',
+    colorClass: 'bg-blue-50 text-blue-700',
+    title: 'Corazones Salesianos: Unidos por Costa Norte',
+    shortTitle: 'Corazones Salesianos',
+    description: 'Donemos víveres no perecibles, ropa para clima cálido (niños de 6 a 18 años) y útiles escolares para la niñez de Esmeraldas. Del 26 de junio al 8 de julio.',
+    time: '09:00 AM - 05:00 PM',
+    location: 'Oficinas ADAUPS, Calle Isabel La Católica (junto al ingreso Bloque A)',
+    imageUrl: '/images/events/corazones-salesianos.webp',
   },
 ];
 

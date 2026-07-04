@@ -3,6 +3,7 @@ import { benefitsData } from '../data';
 import { ArrowLeft, CheckCircle2, MapPin, Phone, Info, Sparkles, Target, Star, ShieldCheck } from 'lucide-react';
 import { categoryIconMap, defaultCategoryIcon } from '../lib/icons';
 import AnimateOnScroll from '../components/ui/AnimateOnScroll';
+import ImageGalleryLightbox from '../components/ui/ImageGalleryLightbox';
 
 export default function BenefitDetail() {
   const { benefitId } = useParams<{ benefitId: string }>();
@@ -89,16 +90,22 @@ export default function BenefitDetail() {
               
               <div className="relative z-10">
                 <div className="flex items-start justify-between mb-10">
-                  <div className="w-24 h-24 md:w-32 md:h-32 rounded-3xl bg-white p-4 flex items-center justify-center shadow-lg shadow-slate-200/60 transform group-hover:-translate-y-2 transition-transform duration-500 border border-slate-100">
+                  <div className="flex items-center gap-3 flex-wrap">
                     {benefit.images && benefit.images.length > 0 ? (
-                      <img 
-                        src={benefit.images[0]} 
-                        alt={`Logo ${benefit.title}`} 
-                        className="max-w-full max-h-full object-contain"
-                        referrerPolicy="no-referrer"
-                      />
+                      benefit.images.map((img, idx) => (
+                        <div key={idx} className="w-24 h-24 md:w-32 md:h-32 rounded-3xl bg-white p-4 flex items-center justify-center shadow-lg shadow-slate-200/60 transform group-hover:-translate-y-2 transition-transform duration-500 border border-slate-100">
+                          <img
+                            src={img}
+                            alt={`Logo ${benefit.title}`}
+                            className="max-w-full max-h-full object-contain"
+                            referrerPolicy="no-referrer"
+                          />
+                        </div>
+                      ))
                     ) : (
-                      <Star className="w-12 h-12 text-slate-300" />
+                      <div className="w-24 h-24 md:w-32 md:h-32 rounded-3xl bg-white p-4 flex items-center justify-center shadow-lg shadow-slate-200/60 border border-slate-100">
+                        <Star className="w-12 h-12 text-slate-300" />
+                      </div>
                     )}
                   </div>
                   <div className="hidden sm:flex w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 items-center justify-center shadow-inner">
@@ -159,7 +166,7 @@ export default function BenefitDetail() {
                       <div className="flex-shrink-0 w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center mr-4 border border-emerald-500/30">
                         <CheckCircle2 className="w-5 h-5 text-emerald-400" />
                       </div>
-                      <span className="text-slate-300 font-medium leading-relaxed">{condition}</span>
+                      <span className="min-w-0 flex-1 break-words text-slate-300 font-medium leading-relaxed">{condition}</span>
                     </div>
                   ))}
                 </div>
@@ -181,6 +188,13 @@ export default function BenefitDetail() {
           </AnimateOnScroll>
 
         </div>
+
+        {/* --- COMUNICADO OFICIAL (GALERÍA) --- */}
+        {benefit.gallery && benefit.gallery.length > 0 && (
+          <AnimateOnScroll delay={0.7} className="mt-20">
+            <ImageGalleryLightbox images={benefit.gallery} title="Comunicado Oficial" />
+          </AnimateOnScroll>
+        )}
 
         {/* --- CATÁLOGO INTERACTIVO (PDF VIEWER) --- */}
         {primaryDoc && (

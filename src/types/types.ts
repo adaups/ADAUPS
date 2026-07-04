@@ -42,6 +42,7 @@ export interface Benefit {
   contact: string;
   images: string[];
   documents: DocumentLink[];
+  gallery?: string[]; // Comunicados/afiches oficiales (se muestran en una galería con lightbox)
 }
 
 export interface TransparencyDocument {
@@ -55,6 +56,8 @@ export interface TransparencyDocument {
 export interface Event {
   month: string;
   day: string;
+  monthEnd?: string;       // Si el evento dura varios días: mes de cierre (ej. "JUL")
+  dayEnd?: string;         // Si el evento dura varios días: día de cierre (ej. "08")
   tag: string;
   colorClass: string;
   title: string;
