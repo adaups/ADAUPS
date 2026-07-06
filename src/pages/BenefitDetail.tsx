@@ -4,6 +4,9 @@ import { ArrowLeft, CheckCircle2, MapPin, Phone, Info, Sparkles, Target, Star, S
 import { categoryIconMap, defaultCategoryIcon } from '../lib/icons';
 import AnimateOnScroll from '../components/ui/AnimateOnScroll';
 import ImageGalleryLightbox from '../components/ui/ImageGalleryLightbox';
+import Seo from '../components/Seo';
+import JsonLd from '../components/JsonLd';
+import { breadcrumbJsonLd, offerJsonLd } from '../lib/seo';
 
 export default function BenefitDetail() {
   const { benefitId } = useParams<{ benefitId: string }>();
@@ -19,6 +22,17 @@ export default function BenefitDetail() {
 
   return (
     <div className="bg-slate-50 min-h-screen text-slate-900 selection:bg-emerald-200 overflow-hidden relative pb-20">
+      <Seo title={benefit.title} description={benefit.shortDescription} path={`/beneficios/${benefit.id}`} />
+      <JsonLd
+        data={[
+          offerJsonLd(benefit),
+          breadcrumbJsonLd([
+            { name: 'Inicio', path: '/' },
+            { name: 'Beneficios', path: '/beneficios' },
+            { name: benefit.title, path: `/beneficios/${benefit.id}` },
+          ]),
+        ]}
+      />
       
       {/* --- BACKGROUND FIGURES & PATTERNS --- */}
       {/* Patrón de Puntos Decorativos (Grid) */}

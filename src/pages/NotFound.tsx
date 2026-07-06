@@ -1,10 +1,12 @@
 import { Link } from 'react-router-dom';
 import { AlertTriangle, HomeIcon } from 'lucide-react';
 import AnimateOnScroll from '../components/ui/AnimateOnScroll';
+import Seo from '../components/Seo';
 
 export default function NotFound() {
   return (
     <div className="min-h-[70vh] flex items-center justify-center p-4">
+      <Seo title="Página no encontrada" description="La página que buscas no existe o ha sido movida." path="/404" noindex />
       <AnimateOnScroll className="text-center max-w-md">
         <div className="flex justify-center mb-6">
           <div className="w-24 h-24 bg-red-100 rounded-full flex items-center justify-center">

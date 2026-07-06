@@ -2,12 +2,16 @@ import { useState } from 'react';
 import { Users, Target, Shield, BookOpen, X } from 'lucide-react';
 import AnimateOnScroll from '../components/ui/AnimateOnScroll';
 import PageHeader from '../components/ui/PageHeader';
+import Seo from '../components/Seo';
+
+const DESCRIPTION = 'Sobre ADAUPS: Asociación de Docentes, Administrativos y Servicios de la Universidad Politécnica Salesiana - Sede Quito. Fundada el 11 de mayo de 1999.';
 
 export default function About() {
   const [selectedPhoto, setSelectedPhoto] = useState<{ name: string; image: string } | null>(null);
 
   return (
     <div className="bg-slate-50 min-h-screen py-12">
+      <Seo title="Sobre ADAUPS" description={DESCRIPTION} path="/sobre-adaups" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}

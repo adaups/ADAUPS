@@ -4,6 +4,9 @@ import { useFilteredData } from '../hooks/useFilteredData';
 import PageHeader from '../components/ui/PageHeader';
 import AnimateOnScroll from '../components/ui/AnimateOnScroll';
 import type { TransparencyDocument } from '../types/types';
+import Seo from '../components/Seo';
+
+const DESCRIPTION = 'Documentos de rendición de cuentas, informes financieros y actas oficiales de ADAUPS, organizados por año.';
 
 export default function Transparency() {
   const {
@@ -30,6 +33,7 @@ export default function Transparency() {
 
   return (
     <div className="bg-slate-50 min-h-screen py-12">
+      <Seo title="Transparencia" description={DESCRIPTION} path="/transparencia" />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <PageHeader

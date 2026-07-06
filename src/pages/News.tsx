@@ -3,6 +3,11 @@ import { ArrowRight, ChevronRight } from 'lucide-react';
 import { newsData } from '../data';
 import DecorativeBackground from '../components/ui/DecorativeBackground';
 import AnimateOnScroll from '../components/ui/AnimateOnScroll';
+import Seo from '../components/Seo';
+import JsonLd from '../components/JsonLd';
+import { itemListJsonLd } from '../lib/seo';
+
+const DESCRIPTION = 'Últimos comunicados oficiales, coberturas de eventos y novedades relevantes para la comunidad ADAUPS.';
 
 export default function News() {
   const sortedNews = [...newsData].sort(
@@ -13,16 +18,18 @@ export default function News() {
   const regularNews = sortedNews.slice(1);
 
   const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('es-ES', { 
+    return new Date(dateString).toLocaleDateString('es-ES', {
       timeZone: 'UTC',
-      year: 'numeric', 
-      month: 'long', 
-      day: 'numeric' 
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
     });
   };
 
   return (
     <div className="relative min-h-screen bg-white overflow-hidden pb-20">
+      <Seo title="Noticias y Actualidad" description={DESCRIPTION} path="/noticias" />
+      <JsonLd data={itemListJsonLd('Noticias ADAUPS', sortedNews.map(n => ({ name: n.title, path: `/noticias/${n.id}` })))} />
       <DecorativeBackground />
       
       {/* Header Area */}

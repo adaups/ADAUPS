@@ -1,10 +1,14 @@
 import { MapPin, Phone, Mail, Clock, Building, ExternalLink } from 'lucide-react';
 import PageHeader from '../components/ui/PageHeader';
 import AnimateOnScroll from '../components/ui/AnimateOnScroll';
+import Seo from '../components/Seo';
+
+const DESCRIPTION = 'Información de contacto de ADAUPS: correo institucional, horario de atención y oficinas en Campus El Girón y Campus Sur, Quito.';
 
 export default function Contact() {
   return (
     <div className="bg-slate-50 min-h-screen py-12">
+      <Seo title="Contacto y Soporte" description={DESCRIPTION} path="/contacto" />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <PageHeader

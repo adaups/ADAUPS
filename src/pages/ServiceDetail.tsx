@@ -3,6 +3,9 @@ import { servicesData } from '../data';
 import { ArrowLeft, CheckCircle2, FileText, ExternalLink, HelpCircle, Phone } from 'lucide-react';
 import { serviceIconMap, defaultServiceIcon } from '../lib/icons';
 import AnimateOnScroll from '../components/ui/AnimateOnScroll';
+import Seo from '../components/Seo';
+import JsonLd from '../components/JsonLd';
+import { breadcrumbJsonLd, serviceJsonLd } from '../lib/seo';
 
 export default function ServiceDetail() {
   const { serviceId } = useParams<{ serviceId: string }>();
@@ -16,6 +19,17 @@ export default function ServiceDetail() {
 
   return (
     <div className="bg-slate-50 min-h-screen py-12">
+      <Seo title={service.title} description={service.shortDescription} path={`/servicios/${service.id}`} />
+      <JsonLd
+        data={[
+          serviceJsonLd(service),
+          breadcrumbJsonLd([
+            { name: 'Inicio', path: '/' },
+            { name: 'Servicios', path: '/servicios' },
+            { name: service.title, path: `/servicios/${service.id}` },
+          ]),
+        ]}
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Back Link */}

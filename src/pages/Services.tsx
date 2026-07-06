@@ -4,10 +4,17 @@ import { ArrowRight, Sparkles, FileText } from 'lucide-react';
 import { serviceIconMap, defaultServiceIcon } from '../lib/icons';
 import DecorativeBackground from '../components/ui/DecorativeBackground';
 import AnimateOnScroll from '../components/ui/AnimateOnScroll';
+import Seo from '../components/Seo';
+import JsonLd from '../components/JsonLd';
+import { itemListJsonLd } from '../lib/seo';
+
+const DESCRIPTION = 'Conoce las opciones de ahorro, préstamos y ayudas económicas diseñadas exclusivamente para el bienestar de los socios de ADAUPS.';
 
 export default function Services() {
   return (
     <div className="bg-slate-50 min-h-screen py-10 lg:py-16 relative overflow-hidden">
+      <Seo title="Servicios Financieros" description={DESCRIPTION} path="/servicios" />
+      <JsonLd data={itemListJsonLd('Servicios Financieros ADAUPS', servicesData.map(s => ({ name: s.title, path: `/servicios/${s.id}` })))} />
       <DecorativeBackground variant="services" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

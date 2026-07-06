@@ -4,10 +4,17 @@ import { ArrowRight, Sparkles, MapPin } from 'lucide-react';
 import { categoryIconMap, defaultCategoryIcon } from '../lib/icons';
 import DecorativeBackground from '../components/ui/DecorativeBackground';
 import AnimateOnScroll from '../components/ui/AnimateOnScroll';
+import Seo from '../components/Seo';
+import JsonLd from '../components/JsonLd';
+import { itemListJsonLd } from '../lib/seo';
+
+const DESCRIPTION = 'Descuentos y facilidades exclusivas que ADAUPS ha gestionado para sus socios y su familia en diversos establecimientos.';
 
 export default function Benefits() {
   return (
     <div className="bg-slate-50 min-h-screen py-10 lg:py-16 relative overflow-hidden">
+      <Seo title="Beneficios y Convenios" description={DESCRIPTION} path="/beneficios" />
+      <JsonLd data={itemListJsonLd('Beneficios y Convenios ADAUPS', benefitsData.map(b => ({ name: b.title, path: `/beneficios/${b.id}` })))} />
       <DecorativeBackground variant="benefits" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

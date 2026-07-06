@@ -4,6 +4,9 @@ import { ArrowLeft, Calendar, Tag, ChevronRight } from 'lucide-react';
 import { useScrollToTop } from '../hooks/useScrollToTop';
 import AnimateOnScroll from '../components/ui/AnimateOnScroll';
 import ImageGalleryLightbox from '../components/ui/ImageGalleryLightbox';
+import Seo from '../components/Seo';
+import JsonLd from '../components/JsonLd';
+import { absoluteUrl, breadcrumbJsonLd, newsArticleJsonLd } from '../lib/seo';
 
 export default function NewsDetail() {
   useScrollToTop();
@@ -33,6 +36,17 @@ export default function NewsDetail() {
 
   return (
     <div className="bg-white min-h-screen pt-16 pb-16">
+      <Seo title={news.title} description={news.summary} path={`/noticias/${news.id}`} image={absoluteUrl(news.imageUrl)} type="article" />
+      <JsonLd
+        data={[
+          newsArticleJsonLd(news),
+          breadcrumbJsonLd([
+            { name: 'Inicio', path: '/' },
+            { name: 'Noticias', path: '/noticias' },
+            { name: news.title, path: `/noticias/${news.id}` },
+          ]),
+        ]}
+      />
 
       {/* 1. Typography-driven Header Section */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-10">

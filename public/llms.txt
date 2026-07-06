@@ -1,0 +1,28 @@
+# ADAUPS
+
+> Asociación de Docentes, Administrativos y Servicios de la Universidad Politécnica Salesiana (UPS) - Sede Quito. Ofrece servicios financieros (préstamos, ahorros, ayudas económicas), convenios comerciales exclusivos para socios y apoyo solidario a la comunidad universitaria.
+
+ADAUPS es una asociación sin fines de lucro fundada el 11 de mayo de 1999. Sus socios son docentes, administrativos y personal de servicios de la UPS Sede Quito. El portal en línea de finanzas (acceso a préstamos, ahorros y estado de cuenta) está en https://finanzas.adaups.org y requiere autenticación de socio.
+
+## Páginas principales
+
+- [Inicio](https://adaups.org/): resumen de servicios, eventos próximos, promociones vigentes y noticias recientes.
+- [Sobre ADAUPS](https://adaups.org/sobre-adaups): historia, misión, valores y directiva de la asociación.
+- [Servicios Financieros](https://adaups.org/servicios): catálogo de préstamos, ahorros y ayudas económicas para socios.
+- [Beneficios y Convenios](https://adaups.org/beneficios): descuentos y alianzas comerciales exclusivas para socios (farmacias, seguros, alimentos, tecnología).
+- [Transparencia](https://adaups.org/transparencia): informes financieros y actas oficiales por año.
+- [Noticias y Actualidad](https://adaups.org/noticias): comunicados oficiales y cobertura de eventos.
+- [Contacto y Soporte](https://adaups.org/contacto): correo institucional, horario de atención y oficinas (Campus El Girón y Campus Sur, Quito).
+
+## Contacto
+
+- Correo institucional: adaupsuio@ups.edu.ec
+- Campus El Girón: Av. Isabel La Católica N. 23-52 y Madrid, Bloque B, Planta Baja. PBX 3962800 / 3962900 ext. 2154.
+- Campus Sur: Av. Rumichaca y Moromoro, Bloque A, Planta Baja. PBX 3962800 / 3962900 ext. 2353.
+- Horario: Lunes a Viernes, 08:00-13:00 y 14:00-17:00.
+
+## Notas para agentes y crawlers
+
+- El sitio es una aplicación de una sola página (SPA) renderizada en el cliente con React; el contenido completo requiere ejecución de JavaScript.
+- Los datos estructurados (schema.org JSON-LD: Organization, WebSite, Service, Offer, NewsArticle, Event) están disponibles en cada página para agentes con capacidad de ejecutar JS.
+- El acceso al portal de finanzas (https://finanzas.adaups.org) es exclusivo para socios autenticados y no forma parte de este sitio público.
