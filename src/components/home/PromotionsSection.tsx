@@ -88,6 +88,11 @@ export default function PromotionsSection() {
                     key={`${src}-${idx}`}
                     src={src}
                     alt={`${featuredPromotion.title} - Imagen ${idx + 1}`}
+                    width={800}
+                    height={800}
+                    loading={idx === 0 ? 'eager' : 'lazy'}
+                    fetchPriority={idx === 0 ? 'high' : 'auto'}
+                    decoding="async"
                     className={`w-full h-full max-h-[360px] object-contain object-center drop-shadow-2xl transition-all duration-1000 ease-in-out ${idx === currentImageIndex ? 'relative opacity-100 scale-100' : 'absolute inset-0 opacity-0 scale-95'}`}
                   />
                 ))}

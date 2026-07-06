@@ -21,7 +21,12 @@
     <meta property="twitter:description" content="Portal web de ADAUPS - Asociación de Docentes, Administrativos y Servicios de la Universidad Politécnica Salesiana. Servicios financieros, convenios y apoyo solidario." />
     <meta property="twitter:image" content="https://adaups.org/images/Logo_ADAUPS.webp" />
 
-    <link rel="icon" type="image/png" href="/images/Logo_ADAUPS.webp" />
+    <link rel="icon" type="image/webp" href="/images/Logo_ADAUPS.webp" />
+
+    <!-- Preload de la imagen LCP (fondo del hero) para que el navegador la
+         descubra antes de ejecutar el bundle JS y mejore el LCP -->
+    <link rel="preload" as="image" href="/images/event1.webp" fetchpriority="high" />
+
     <title>ADAUPS - Asociación de Docentes, Administrativos y Servicios UPS</title>
   </head>
   <body>

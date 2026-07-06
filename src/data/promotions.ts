@@ -8,11 +8,11 @@ export const promotionsData: Promotion[] = [
     shortDescription: 'Aprovecha nuestros increíbles precios en productos esenciales para el hogar.\n\nDifiere tus compras hasta 2 meses exclusivo para socios.',
     description: 'Descubre la calidad en cada una de nuestras propuestas. Hemos seleccionado los mejores productos de primera necesidad para tu hogar con precios imbatibles y financiamiento disponible exclusivo para socios ADAUPS.',
     images: [
-      '/images/promotions/arroz-100.png',
-      '/images/promotions/arroz-25.png',
-      '/images/promotions/azucar-50.png',
-      '/images/promotions/azucar-25.png',
-      '/images/promotions/aceite-1.png'
+      '/images/promotions/arroz-100.webp',
+      '/images/promotions/arroz-25.webp',
+      '/images/promotions/azucar-50.webp',
+      '/images/promotions/azucar-25.webp',
+      '/images/promotions/aceite-1.webp'
     ],
     validUntil: '2026-04-30',
     featured: true,
