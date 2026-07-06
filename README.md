@@ -1,47 +1,58 @@
-# ADAUPS - Portal Web V1
+# ADAUPS - Portal Web
 
-Portal web oficial de la **Asociación de Docentes, Administrativos y Servicios de la Universidad Politécnica Salesiana, Sede Quito (ADAUPS)**. Permite acceder a información sobre servicios financieros, beneficios, convenios, transparencia y recursos de interés para los socios.
+Portal web oficial de la **Asociación de Docentes, Administrativos y Servicios de la Universidad Politécnica Salesiana, Sede Quito (ADAUPS)**. Da acceso a información sobre servicios financieros, beneficios, convenios, transparencia y noticias para los socios.
+
+El portal de finanzas en línea (préstamos, ahorros, estado de cuenta) vive por separado en `finanzas.adaups.org` y no forma parte de este repositorio.
 
 ## Características Principales
 
-El proyecto ha sido refactorizado con una arquitectura limpia y moderna:
-- **Componentes Reutilizables:** UI modular (botones, héroes, tarjetas) para mantener la interfaz consistente.
-- **Lógica Extraída (Hooks):** Gestión fluida de animaciones (`useAnimatedCounter`), navegación al tope de página (`useScrollToTop`) y filtrado (`useFilteredData`).
-- **Tipado Fuerte:** Definición estricta de interfaces en TypeScript para mantener la seguridad y coherencia en los datos del portal.
-- **Animaciones Centralizadas:** Configuraciones compartidas de `framer-motion` para transiciones consistentes (fade, slide up).
-- **Código Limpio:** Configuración estandarizada con `ESLint` y `Prettier`.
+- **Contenido tipado:** servicios, beneficios, eventos y noticias se definen como datos TypeScript con interfaces estrictas, sin CMS.
+- **SEO y datos estructurados:** título, descripción y Open Graph propios por página, más JSON-LD (schema.org) para servicios, beneficios, noticias y eventos.
+- **Imágenes optimizadas:** assets en WebP dimensionados a su tamaño real de despliegue.
+- **Componentes reutilizables:** UI modular (galería con lightbox, animaciones al hacer scroll, cabeceras de página) para mantener la interfaz consistente.
+- **Código limpio:** ESLint + Prettier configurados; TypeScript en modo `strict`.
 
 ## Stack Tecnológico
 
-- **Framework:** [React 18](https://reactjs.org/) + [Vite](https://vitejs.dev/)
+- **Framework:** [React 19](https://react.dev/) + [Vite 6](https://vitejs.dev/)
 - **Lenguaje:** [TypeScript](https://www.typescriptlang.org/) (`strict: true`)
 - **Estilos:** [Tailwind CSS 4](https://tailwindcss.com/)
+- **Enrutamiento:** [React Router 7](https://reactrouter.com/)
 - **Iconos:** [Lucide React](https://lucide.dev/)
-- **Animaciones:** [Framer Motion](https://motion.dev/)
-- **Enrutamiento:** [React Router](https://reactrouter.com/)
-
----
+- **SEO:** [react-helmet-async](https://github.com/staylor/react-helmet-async)
 
 ## Ejecutar Localmente
 
-**Requisitos previos:** `Node.js` (v18 o superior recomendado)
+**Requisitos previos:** Node.js 20 o superior.
 
 1. **Instalar dependencias:**
    ```bash
    npm install
    ```
 
-2. **Variables de Entorno (Opcional):**
-   Si se integra alguna funcionalidad de IA en el futuro, configurar `GEMINI_API_KEY` creando un archivo `.env` o `.env.local` usando `.env.example` como plantilla.
-
-3. **Ejecutar en desarrollo:**
+2. **Ejecutar en desarrollo:**
    ```bash
    npm run dev
    ```
-   Abre [http://localhost:3000/ADAUPS-V1/](http://localhost:3000/ADAUPS-V1/) en tu navegador.
+   Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-4. **Compilar para producción:**
+3. **Compilar para producción:**
    ```bash
    npm run build
    ```
-   Se generará la carpeta `dist/` con la versión optimizada.
+   Genera la carpeta `dist/` lista para desplegar en cualquier hosting de archivos estáticos.
+
+4. **Previsualizar el build de producción:**
+   ```bash
+   npm run preview
+   ```
+
+## Scripts disponibles
+
+| Comando | Descripción |
+|---|---|
+| `npm run dev` | Servidor de desarrollo con hot-reload |
+| `npm run build` | Build de producción (`dist/`) |
+| `npm run preview` | Sirve el build de producción localmente |
+| `npm run lint` | Verificación de tipos (`tsc --noEmit`) |
+| `npm run clean` | Elimina la carpeta `dist/` |

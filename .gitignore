@@ -12,3 +12,4 @@ coverage/
 .agents/
 skills-lock.json
 CLAUDE.md
+design-src/

@@ -1,11 +1,11 @@
 import type { Benefit, Event, NewsItem, Service } from '../types/types';
 
-export const SITE_URL = 'https://adaups.org';
+const SITE_URL = 'https://adaups.org';
 export const SITE_NAME = 'ADAUPS - Asociación de Docentes, Administrativos y Servicios UPS';
 export const DEFAULT_DESCRIPTION =
   'Asociación de Docentes, Administrativos y Servicios de la Universidad Politécnica Salesiana - Sede Quito. Servicios financieros, convenios y apoyo solidario.';
 export const DEFAULT_IMAGE = `${SITE_URL}/images/Logo_ADAUPS.webp`;
-export const ORG_EMAIL = 'adaupsuio@ups.edu.ec';
+const ORG_EMAIL = 'adaupsuio@ups.edu.ec';
 
 export function absoluteUrl(path: string): string {
   return `${SITE_URL}${path}`;
