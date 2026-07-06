@@ -208,7 +208,7 @@ export const benefitsData: Benefit[] = [
     contact: 'Oficinas ADAUPS',
     images: [
       '/images/partners/cruzazul.svg',
-      '/images/partners/pharmacys.png'
+      '/images/partners/pharmacys.webp'
     ],
     documents: [],
     gallery: [

@@ -14,7 +14,7 @@ type CarouselItem = {
 
 const carouselItems: CarouselItem[] = [
   { id: 'Farmacias', img: '/images/partners/SANA-SANA.webp',  imgWidth: 40,  alt: 'Sana Sana',      label: 'Farmacias SanaSana' },
-  { id: 'credito-empresarial-difare', img: '/images/partners/pharmacys.png', imgWidth: 133, alt: "Pharmacy's", label: "Pharmacy's" },
+  { id: 'credito-empresarial-difare', img: '/images/partners/pharmacys.webp', imgWidth: 133, alt: "Pharmacy's", label: "Pharmacy's" },
   { id: 'credito-empresarial-difare', img: '/images/partners/cruzazul.svg', imgWidth: 165, alt: 'Cruz Azul', label: 'Cruz Azul' },
   { id: 'Farmacias', img: '/images/partners/fybeca.webp',     imgWidth: 40,  alt: 'Fybeca',          label: 'Farmacias Fybeca' },
   { id: 'Seguros',   img: '/images/partners/zurich.svg',      imgWidth: 154, alt: 'ZURICH',          label: 'Seguros Zurich' },

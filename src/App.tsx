@@ -1,8 +1,11 @@
 import { lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
+// Home es la landing/LCP y la ruta más visitada: se importa de forma estática
+// (no lazy) para que se pinte en el primer render sin el fallback de <Suspense>.
+// Ese swap fallback→contenido empujaba el footer ~5000px y causaba el CLS (0.22).
+import Home from './pages/Home';
 
-const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Services = lazy(() => import('./pages/Services'));
 const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
